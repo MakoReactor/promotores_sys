@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>HomePage</h1>
-<ul>
 	{% for promotora in object_list %}
-	<li>{{ promotora }}</li>
+	<div class="post-entry">
+		<h2><a href="">{{ promotora.nome }}</a></h2>
+		<p>{{ promotora.endereco }}</p>
+	</div>
 	{% endfor %}
-</ul>
-
-{% endblock %}
+{% endblock content %}
