@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="post-entry">
+	<h2>{{ promotora.nome }}</h2>
+	<p>{{ promotora.endereco }}</p>
+	<p>RG: {{ promotora.rg }}</p>
+	<p>CPF: {{ promotora.cpf }}</p> 
+	<p>Carteira de Trabalho: {{ promotora.ctps }}</p>
+</div>
+{% endblock content %}

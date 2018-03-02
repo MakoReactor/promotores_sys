@@ -3,7 +3,7 @@
 {% block content %}
 	{% for promotora in object_list %}
 	<div class="post-entry">
-		<h2><a href="">{{ promotora.nome }}</a></h2>
+		<h2><a href="{% url 'promotora_detail' promotora.pk %}">{{ promotora.nome }}</a></h2>
 		<p>{{ promotora.endereco }}</p>
 	</div>
 	{% endfor %}
