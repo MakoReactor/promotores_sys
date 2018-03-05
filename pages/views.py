@@ -2,7 +2,7 @@ from django.views.generic import ListView, TemplateView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
-from .models import Promotora
+from .models import Promotora, Cliente
 
 class HomePageView(ListView):
 	model = Promotora
@@ -16,6 +16,9 @@ class PromotoraDetailView(DetailView):
 	template_name = 'promotora_detail.html'
 	context_object_name = 'promotora'
 
+class ClienteListView(ListView):
+	model = Cliente
+	template_name = 'cliente_list.html'
 
 #Forms
 class PromotoraCreateView(CreateView):
@@ -32,3 +35,4 @@ class PromotoraDeleteView(DeleteView):
 	model = Promotora
 	template_name = 'promotora_delete.html'
 	success_url = reverse_lazy('home')
+

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for cliente in object_list %}
+<div class="post-entry">	
+		
+		<h2><a href="">{{ cliente.razao_social }}</a></h2>
+		<p>código cliente: {{ cliente.codigo }}</p>
+	
+	</div>
+	{% endfor %}
+
+
+
+{% endblock content %}

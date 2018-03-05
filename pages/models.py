@@ -14,3 +14,18 @@ class Promotora(models.Model):
 	def __str__(self):
 		"""Representação de um modelo"""
 		return self.nome
+
+class Cliente(models.Model):
+	codigo = models.IntegerField()
+	#fantasia = models.CharField(max_length=100)
+	razao_social = models.CharField(max_length=100)
+	rua = models.CharField(max_length=100)
+	bairro = models.CharField(max_length=100)
+	cidade = models.CharField(max_length=100)
+	cep = models.CharField(max_length=100)
+
+	def get_absolute_url(self):
+		pass
+
+	def __str__(self):
+		return self.razao_social
