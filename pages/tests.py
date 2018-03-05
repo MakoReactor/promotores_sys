@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
 from .models import Promotora
@@ -23,6 +24,8 @@ class HomePageViewTest(TestCase):
 								rg="1",
 								cpf="2",
 								ctps="3")
+
+		
 
 	def test_view_url_exists_at_proper_location(self):
 		resp = self.client.get('/')
@@ -56,6 +59,8 @@ class HomePageViewTest(TestCase):
 		self.assertEqual(no_response.status_code, 404)
 		self.assertContains(response, 'Katia')
 		self.assertTemplateUsed(response, 'promotora_detail.html')
+
+	
 
 
 
