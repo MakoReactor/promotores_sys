@@ -16,9 +16,9 @@ class Promotora(models.Model):
 		return self.nome
 
 class Cliente(models.Model):
-	codigo = models.IntegerField()
-	#fantasia = models.CharField(max_length=100)
+	codigo = models.IntegerField(unique=True)	
 	razao_social = models.CharField(max_length=100)
+	fantasia = models.CharField(max_length=100)
 	rua = models.CharField(max_length=100)
 	bairro = models.CharField(max_length=100)
 	cidade = models.CharField(max_length=100)
@@ -28,4 +28,4 @@ class Cliente(models.Model):
 		pass
 
 	def __str__(self):
-		return self.razao_social
+		return self.fantasia

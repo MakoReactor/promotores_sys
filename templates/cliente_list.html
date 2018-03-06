@@ -1,14 +1,44 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% for cliente in object_list %}
-<div class="post-entry">	
+<style>
+	table, th, td {
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+	th, td { 
+		padding: 5px;
+		text-align: left;
+	}
+</style>
+
+<div class="table">
+	<table style="width: 100%">
+		<tr>
+			<th>Código</th>
+			<th>Razão Social</th>
+			<th>Nome Fantasia</th>
+			<th>Rua</th>
+			<th>Cidade</th>
+			<th>Cep</th>
+		</tr>
+
+		<tr>
+			{% for cliente in object_list %}
+			
+			<td>{{ cliente.codigo }}</td>
+			<td><a href="">{{ cliente.razao_social }}</a></td>
+			<td>{{ cliente.fantasia }}</td>
+			<td>{{ cliente.rua }}</td>
+			<td>{{ cliente.cidade }}</td>
+			<td>{{ cliente.cep }}</td>
+		</tr>
+		{% endfor %}
 		
-		<h2><a href="">{{ cliente.razao_social }}</a></h2>
-		<p>código cliente: {{ cliente.codigo }}</p>
+	</table>	
 	
 	</div>
-	{% endfor %}
+	
 
 
 

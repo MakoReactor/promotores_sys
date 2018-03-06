@@ -1,6 +1,8 @@
 from django.views.generic import ListView, TemplateView, DetailView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
 from django.urls import reverse_lazy
+
+from .forms import ContactForm
 
 from .models import Promotora, Cliente
 
@@ -10,6 +12,10 @@ class HomePageView(ListView):
 
 class AboutPageView(TemplateView):
 	template_name = 'about.html'
+
+#teste
+class Base2View(TemplateView):
+	template_name = 'base2.html'
 
 class PromotoraDetailView(DetailView):
 	model = Promotora
@@ -36,3 +42,12 @@ class PromotoraDeleteView(DeleteView):
 	template_name = 'promotora_delete.html'
 	success_url = reverse_lazy('home')
 
+#teste Forms
+class ContactView(FormView):
+	template_name = 'contact.html'
+	form_class = ContactForm
+	success_url = reverse_lazy('home')
+
+	def form_valid(self, form):
+		form.send_email()
+		return super().form_valid(form)
