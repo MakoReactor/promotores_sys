@@ -12,4 +12,6 @@ urlpatterns = [
     path('clientes/', views.ClienteListView.as_view(), name='cliente_list'),
     path('contato/', views.ContactView.as_view(), name='contact'),
     path('thanks/', views.ThanksTemplateView.as_view(), name='thanks'),
+    path('tasting', views.TastinListView.as_view(), name='tasting_list'),
+    path('tasting/new/', views.TastinCreateView.as_view(), name='tasting_new'),
 ]

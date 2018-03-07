@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 
 from .forms import ContactForm
 
-from .models import Promotora, Cliente
+from .models import Promotora, Cliente, Tasting
 
 class HomePageView(ListView):
 	model = Promotora
@@ -41,6 +41,17 @@ class PromotoraDeleteView(DeleteView):
 
 class ThanksTemplateView(TemplateView):
 	template_name = 'thanks.html'
+
+class TastinListView(ListView):
+	model = Tasting
+	template_name = 'tasting_list.html'
+
+class TastinCreateView(CreateView):
+	model = Tasting
+	template_name = 'tasting_new.html'
+	#fields = ['promotora', 'cliente', 'tasting_date']
+	fields = '__all__'
+
 
 
 #teste Forms

@@ -31,6 +31,17 @@ class Cliente(models.Model):
 		return self.fantasia
 
 class Tasting(models.Model):
-	who = models.ForeignKey(Promotora, on_delete=models.CASCADE)
-	where = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+	promotora = models.ForeignKey(Promotora, on_delete=models.CASCADE)
+	cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
 	tasting_date = models.DateField(auto_now_add=False)
+
+	class Meta:
+		ordering = ['-tasting_date']
+
+
+	def get_absolute_url(self):
+		return reverse('tasting_list')
+
+
+	def __str__(self):
+		return str(self.promotora)
