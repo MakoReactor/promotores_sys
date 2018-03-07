@@ -13,10 +13,6 @@ class HomePageView(ListView):
 class AboutPageView(TemplateView):
 	template_name = 'about.html'
 
-#teste
-class Base2View(TemplateView):
-	template_name = 'base2.html'
-
 class PromotoraDetailView(DetailView):
 	model = Promotora
 	template_name = 'promotora_detail.html'
@@ -26,7 +22,7 @@ class ClienteListView(ListView):
 	model = Cliente
 	template_name = 'cliente_list.html'
 
-#Forms
+
 class PromotoraCreateView(CreateView):
 	model = Promotora
 	template_name = 'promotora_new.html'
@@ -40,7 +36,12 @@ class PromotoraUpdateView(UpdateView):
 class PromotoraDeleteView(DeleteView):
 	model = Promotora
 	template_name = 'promotora_delete.html'
-	success_url = reverse_lazy('home')
+	#success_url = reverse_lazy('home')
+	success_url = '/thanks/'
+
+class ThanksTemplateView(TemplateView):
+	template_name = 'thanks.html'
+
 
 #teste Forms
 class ContactView(FormView):

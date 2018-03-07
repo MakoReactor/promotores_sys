@@ -16,7 +16,7 @@ class Promotora(models.Model):
 		return self.nome
 
 class Cliente(models.Model):
-	codigo = models.IntegerField(unique=True)	
+	codigo = models.IntegerField(unique=True)
 	razao_social = models.CharField(max_length=100)
 	fantasia = models.CharField(max_length=100)
 	rua = models.CharField(max_length=100)
@@ -29,3 +29,8 @@ class Cliente(models.Model):
 
 	def __str__(self):
 		return self.fantasia
+
+class Tasting(models.Model):
+	who = models.ForeignKey(Promotora, on_delete=models.CASCADE)
+	where = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+	tasting_date = models.DateField(auto_now_add=False)

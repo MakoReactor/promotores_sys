@@ -1,15 +1,15 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 
 {% block content %}
 <div class="post-entry">
 	<h2>{{ promotora.nome }}</h2>
 	<p>{{ promotora.endereco }}</p>
 	<p>RG: {{ promotora.rg }}</p>
-	<p>CPF: {{ promotora.cpf }}</p> 
+	<p>CPF: {{ promotora.cpf }}</p>
 	<p>Carteira de Trabalho: {{ promotora.ctps }}</p>
 </div>
 
-<p><a href="{% url 'promotora_edit' promotora.pk %}">Editar Dados Promtor(a)</a></p>
+<p><a href="{% url 'promotora_edit' promotora.pk %}">Editar Dados Promotor(a)</a></p>
 <p><a href="{% url 'promotora_delete' promotora.pk %}">Apagar Promotor(a)</a></p>
 
 {% endblock content %}

@@ -11,5 +11,5 @@ urlpatterns = [
     path('promotora/<int:pk>/delete/', views.PromotoraDeleteView.as_view(), name='promotora_delete'),
     path('clientes/', views.ClienteListView.as_view(), name='cliente_list'),
     path('contato/', views.ContactView.as_view(), name='contact'),
-    path('base2/', views.Base2View.as_view(), name='base2'),
+    path('thanks/', views.ThanksTemplateView.as_view(), name='thanks'),
 ]

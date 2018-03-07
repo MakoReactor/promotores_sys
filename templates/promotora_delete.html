@@ -1,11 +1,11 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 
 {% block content %}
 	<h1>Apagar Promotor(a)</h1>
 	<form action="" method="post">{% csrf_token %}
 		<p>Você realmente quer apagar "{{ promotora.nome }}"?</p>
-		<input type="submit" value="Confirmar" />		
+		<input type="submit" value="Confirmar" />
 	</form>
-	
+
 
 {% endblock content %}
