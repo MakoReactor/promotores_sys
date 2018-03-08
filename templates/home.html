@@ -1,11 +1,10 @@
 {% extends 'base2.html' %}
 
 {% block content %}
-	{% for promotora in object_list %}
-	<div class="">
-		<h2><a href="{% url 'promotora_detail' promotora.pk %}">{{ promotora.nome }}</a></h2>
-		<p>{{ promotora.endereco }}</p>
-	</div>
-	{% endfor %}
-	<p><a href="{% url 'promotora_new' %}">Adicionar Novo(a) Promotor(a)</a></p>
-{% endblock content %}
+<ul>
+	<h1>Bem Vindo</h1>
+	<p>Sistema Cadastro Degustações</p>
+	<p>VR CAMPOS INDUSTRIA E COMÉRCIO EIRELI</p>
+	<p>site <a href="http://queijoscaxambu.com.br">Queijos Caxambu</a> </p>
+</ul>
+{% endblock %}

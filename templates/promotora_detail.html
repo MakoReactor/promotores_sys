@@ -8,8 +8,8 @@
 	<p>CPF: {{ promotora.cpf }}</p>
 	<p>Carteira de Trabalho: {{ promotora.ctps }}</p>
 </div>
-
-<p><a href="{% url 'promotora_edit' promotora.pk %}">Editar Dados Promotor(a)</a></p>
-<p><a href="{% url 'promotora_delete' promotora.pk %}">Apagar Promotor(a)</a></p>
+<hr>
+<a class="btn btn-warning" href="{% url 'promotora_edit' promotora.pk %}">Editar Promotor(a)</a>
+<a class="btn btn-danger" href="{% url 'promotora_delete' promotora.pk %}">Apagar Promotor(a)</a>
 
 {% endblock content %}

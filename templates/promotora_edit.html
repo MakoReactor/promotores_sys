@@ -3,7 +3,14 @@
 {% block content %}
 <h1>Editar Promotor(a)</h1>
 <form action="" method="post">{% csrf_token %}
-	{{ form.as_p }}
+	{% for field in form %}
+	<tr>
+		<td>{{ field.errors }}</td>
+		<td>{{ field.label_tag }}</td>
+		<td><p>{{ field }}</p></td>
+	</tr>
+
+	{% endfor %}
 	<input type="submit" value="Update">
 </form>
 {% endblock %}

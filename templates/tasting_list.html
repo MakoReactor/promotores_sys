@@ -2,13 +2,15 @@
 
 {% block content %}
 
-<p><h3>Degustações</h3> <a href="{% url 'tasting_new' %}">+ Cadastrar Degustação</a></p>
+<p><h3>Degustações</h3>
+
+<a href="{% url 'tasting_new' %}"><button type="button" class="btn btn-primary">+ Cadastrar Degustação</button></a></p>
 <div class="table">
 	<table style="width: 100%">
 		<tr>
-			<th>Promotora</th>
+			<th>Promotor(a)</th>
 			<th>Cliente</th>
-      <th>Endereco</th>
+      <th>Endereço</th>
 			<th>Data Degustação</th>
 		</tr>
 

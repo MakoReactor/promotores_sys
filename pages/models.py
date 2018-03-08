@@ -33,7 +33,7 @@ class Cliente(models.Model):
 class Tasting(models.Model):
 	promotora = models.ForeignKey(Promotora, on_delete=models.CASCADE)
 	cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
-	tasting_date = models.DateField(auto_now_add=False)
+	tasting_date = models.DateField('Data da Degustação', auto_now_add=False)
 
 	class Meta:
 		ordering = ['-tasting_date']

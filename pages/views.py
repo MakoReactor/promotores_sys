@@ -6,22 +6,17 @@ from .forms import ContactForm
 
 from .models import Promotora, Cliente, Tasting
 
-class HomePageView(ListView):
-	model = Promotora
+class HomePageView(TemplateView):
 	template_name = 'home.html'
 
-class AboutPageView(TemplateView):
-	template_name = 'about.html'
+class PromotoraPageView(ListView):
+	model = Promotora
+	template_name = 'promotora_list.html'
 
 class PromotoraDetailView(DetailView):
 	model = Promotora
 	template_name = 'promotora_detail.html'
 	context_object_name = 'promotora'
-
-class ClienteListView(ListView):
-	model = Cliente
-	template_name = 'cliente_list.html'
-
 
 class PromotoraCreateView(CreateView):
 	model = Promotora
@@ -38,6 +33,10 @@ class PromotoraDeleteView(DeleteView):
 	template_name = 'promotora_delete.html'
 	#success_url = reverse_lazy('home')
 	success_url = '/thanks/'
+
+class ClienteListView(ListView):
+	model = Cliente
+	template_name = 'cliente_list.html'
 
 class ThanksTemplateView(TemplateView):
 	template_name = 'thanks.html'
