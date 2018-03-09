@@ -1,7 +1,7 @@
-from django.contrib.admin.widgets import AdminDateWidget
-from django.forms.fields import DateField
 from django import forms
 from .models import Tasting
+
+from django.contrib.admin import widgets
 
 class ContactForm(forms.Form):
     name = forms.CharField()
@@ -12,8 +12,8 @@ class ContactForm(forms.Form):
         pass
 
 class TastinFormDatePicker(forms.ModelForm):
-    tasting_date = DateField(widget=AdminDateWidget)
-
+    tasting_date = forms.DateField(widget=forms.DateInput(attrs={"format":"mm/dd/YYYY", 'placeholder':"Formato 12/12/2018"}))
     class Meta:
         model = Tasting
         fields = ['tasting_date']
+        help_texts = {'tasting_date': "Data no formato YYYY-MM-DD"}

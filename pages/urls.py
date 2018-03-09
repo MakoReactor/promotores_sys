@@ -1,4 +1,5 @@
 from django.urls import path
+from django.views.i18n import JavaScriptCatalog
 
 from . import views
 
@@ -14,4 +15,5 @@ urlpatterns = [
     path('thanks/', views.ThanksTemplateView.as_view(), name='thanks'),
     path('tasting', views.TastinListView.as_view(), name='tasting_list'),
     path('tasting/new/', views.TastinCreateView.as_view(), name='tasting_new'),
+    path('jsi18n/', JavaScriptCatalog.as_view(), name='javascript-catalog'),
 ]

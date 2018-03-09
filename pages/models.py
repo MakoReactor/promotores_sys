@@ -24,6 +24,9 @@ class Cliente(models.Model):
 	cidade = models.CharField(max_length=100)
 	cep = models.CharField(max_length=100)
 
+	class Meta:
+		ordering = ['codigo']
+
 	def get_absolute_url(self):
 		pass
 
@@ -38,10 +41,8 @@ class Tasting(models.Model):
 	class Meta:
 		ordering = ['-tasting_date']
 
-
 	def get_absolute_url(self):
 		return reverse('tasting_list')
-
 
 	def __str__(self):
 		return str(self.promotora)
